@@ -1,0 +1,12 @@
+<resources>
+    <color name="primary">#FFcc116D</color>
+	<color name="primary_dark">#FF5C1166</color>
+	<color name="primary_light">#FFA01142</color>
+	<color name="accent">#FFff116D</color>
+	<color name="primary_text">#dddddd</color>
+	<color name="secondary_text">#bbbbbb</color>
+	<color name="icons">#cccccc</color>
+	<color name="divider">#80B6B6B6</color>
+  <color name="window_background">#fff6f6f6</color>
+	<color name="card_background">#ff8c2266</color>
+</resources>

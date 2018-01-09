@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+	<resources>
+		<declare-styleable name="style">
+			<attr name="colorIcons" format="reference|color"/>
+			<attr name="cellSpacing" format="reference|dimension"/>
+		</declare-styleable>
+	</resources>

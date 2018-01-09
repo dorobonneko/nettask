@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string-array name="method">
+		<item>GET</item>
+		<item>POST</item>
+		<item>HEAD</item>
+	</string-array>
+	<string-array name="useragent">
+		<item>Android</item>
+		<item>iPhone</item>
+		<item>Chrome</item>
+		<item>FireFox</item>
+		<item>Custom</item>
+	</string-array>
+	<string-array name="days">
+		<item>每天</item>
+		<item>仅一次</item>
+		<item>周一至周五</item>
+		<item>自定义</item>
+	</string-array>
+</resources>

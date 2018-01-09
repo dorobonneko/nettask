@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content">
+
+	<LinearLayout
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:orientation="vertical"
+		android:background="@drawable/background">
+
+		<TextView
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:textAppearance="?android:attr/textAppearanceMedium"
+			android:text="添加任务"
+			android:layout_marginStart="30dp"
+			android:layout_marginTop="15dp"
+			android:textColor="?android:attr/textColorPrimary"/>
+
+		<ScrollView
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content">
+
+			<LinearLayout
+				android:layout_marginStart="5dp"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical">
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:textColor="?android:attr/textColorSecondary"
+					android:text="Url:"/>
+
+				<EditText
+					android:id="@+id/newtask_url"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:hint="链接"
+					android:singleLine="true"/>
+
+				<com.moe.network.tasker.widget.AutoLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content">
+
+					<CheckBox
+						android:id="@+id/newtask_useProxy"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="使用代理"
+						android:textColor="@drawable/textcolor"
+						/>
+
+					<CheckBox
+						android:id="@+id/newtask_useRandom"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="使用随机值"
+						android:textColor="@drawable/textcolor"
+						/>
+
+				</com.moe.network.tasker.widget.AutoLayout>
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content">
+
+					<TextView
+						android:layout_alignParentStart="true"
+						android:layout_centerVertical="true"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textColor="?android:attr/textColorSecondary"
+						android:text="Method:"/>
+
+					<Spinner
+						android:id="@+id/newtask_method"
+						android:layout_alignParentEnd="true"
+						android:layout_centerVertical="true"
+						android:entries="@array/method"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"/>
+
+				</RelativeLayout>
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content">
+
+					<TextView
+						android:layout_alignParentStart="true"
+						android:layout_centerVertical="true"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textColor="?android:attr/textColorSecondary"
+						android:text="UserAgent:"/>
+
+					<Spinner
+						android:id="@+id/newtask_userAgent"
+						android:layout_alignParentEnd="true"
+						android:layout_centerVertical="true"
+						android:entries="@array/useragent"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"/>
+
+				</RelativeLayout>
+
+				<EditText
+					android:singleLine="true"
+					android:id="@+id/newtask_customUserAgent"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:visibility="gone"/>
+
+			</LinearLayout>
+
+		</ScrollView>
+
+		<RelativeLayout
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content">
+
+			<Button
+				android:id="@+id/add"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="添加"
+				android:background="?attr/selectableItemBackground"
+				android:layout_alignParentEnd="true"/>
+
+			<Button
+				android:id="@+id/cancel"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="取消"
+				android:background="?attr/selectableItemBackground"
+				android:layout_toStartOf="@id/add"/>
+
+		</RelativeLayout>
+
+	</LinearLayout>
+
+</android.support.v7.widget.CardView>
+
