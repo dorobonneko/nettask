@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="添加任务">添加任务</string>
+    <string name="名称">名称:</string>
+    <string name="url">Url:</string>
+    <string name="链接">链接</string>
+    <string name="使用代理">使用代理</string>
+    <string name="使用随机值">使用随机值</string>
+    <string name="method">Method:</string>
+    <string name="useragent">UserAgent:</string>
+    <string name="添加">添加</string>
+    <string name="取消">取消</string>
+
 
     <string name="app_name">NetTasker</string>
-    <string formatted="false" name="book_list">/bbs/book_list.aspx</string>
-	<string formatted="false" name="search_list">/search/book_list.aspx</string>
-	<string formatted="false" name="view">/bbs/view.aspx</string>
-	<string name="reply">/bbs/book_re.aspx</string>
-	<string name="reply_file">/bbs/book_re_addFile.aspx</string>
-	<string name="add">/bbs/book_view_add.aspx</string>
-	<string name="sendmoney">/bbs/book_view_sendmoney.aspx</string>
-	<string name="vote">/bbs/book_view_addvote.aspx</string>
-	<string name="addfile">/bbs/book_view_addfile.aspx</string>
-</resources>
+  </resources>

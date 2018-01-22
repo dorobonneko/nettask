@@ -38,6 +38,13 @@ public class NumberUtils
 			throw new RuntimeException("only support monday,tuesday...");
 		return (data&0xff80ffff)|(days&(~0xff80ffff));
 	}
+	//25-32存mode序号
+	public static int setModePosition(int data,int position){
+		return (data&0x1ffffff)|(position<<25);
+	}
+	public static int getModePosition(int data){
+		return data>>25;
+	}
 	//第一位代理标记，第二位随机标记！3～32位顺序标记
 	public static int setUseProxy(int data,boolean proxy){
 		return proxy?(data|1):(data&(~1));

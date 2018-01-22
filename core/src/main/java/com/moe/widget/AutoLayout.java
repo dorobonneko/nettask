@@ -1,4 +1,4 @@
-package com.moe.network.tasker.widget;
+package com.moe.widget;
 import android.widget.FrameLayout;
 import android.content.Context;
 import android.util.AttributeSet;
@@ -15,7 +15,7 @@ public class AutoLayout extends FrameLayout
 	protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec)
 	{
 		// TODO: Implement this method
-		super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+		super.onMeasure(widthMeasureSpec, height);
 		setMeasuredDimension(widthMeasureSpec,height);
 	}
 	
@@ -25,13 +25,15 @@ public class AutoLayout extends FrameLayout
 		int top=0,left=0,max=0;
 		for(int i=0;i<getChildCount();i++){
 			View child=getChildAt(i);
-			max=Math.max(max,child.getMeasuredHeight());
 			if(left+child.getMeasuredWidth()>getMeasuredWidth()){
+				//换行
 				left=0;
 				top+=max;
 				max=0;
 				}
+			max=Math.max(max,child.getMeasuredHeight());
 			child.layout(left,top,left+=child.getMeasuredWidth(),top+child.getMeasuredHeight());
+			//left+=child.getMeasuredWidth();
 		}
 		height=top+max;
 		

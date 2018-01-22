@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<declare-styleable name="MoeTheme">
+		<attr name="colorFocus" format="reference|color"/>
+		<attr name="colorNormal" format="reference|color"/>
+		<attr name="textColor">
+			<enum name="primary" value="0"/> 
+			<enum name="secondary" value="1"/>
+			<enum name="tip" value="2"/>
+		</attr>
+	</declare-styleable>
+</resources>

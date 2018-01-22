@@ -3,12 +3,13 @@
     package="com.moe.network.tasker" >
 
     <application
-        android:allowBackup="false"
+		android:name=".app.Application"
         android:icon="@drawable/wifi"
         android:label="@string/app_name"
         android:theme="@style/AppTheme"
 		android:resizeableActivity = "true">
         <activity
+			android:theme="@style/AppTheme"
             android:name=".MainActivity"
             android:label="@string/app_name" >
             <intent-filter>
@@ -17,16 +18,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-		<activity
-			android:windowSoftInputMode="adjustResize|stateHidden"
-			android:launchMode="singleTask"
-			android:theme="@style/FloatActivity"
-			android:name=".NewTask"/>
-		<activity
-			android:windowSoftInputMode="adjustPan|adjustResize"
-			android:launchMode="singleTask"
-			android:name=".NewTimer"
-			/>
     </application>
 
+<uses-permission android:name="android.permission.INTERNET"/>
 </manifest>

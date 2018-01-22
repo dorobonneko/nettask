@@ -1,6 +1,7 @@
 package com.moe.network.tasker.entity;
 import android.os.Parcelable;
 import android.os.Parcel;
+import com.moe.network.tasker.utils.NumberUtils;
 
 public class Task implements Parcelable
 {
@@ -49,16 +50,26 @@ public class Task implements Parcelable
 		return method;
 	}
 
-	public void setUse(int use)
+	public void setUseProxy(boolean use)
 	{
-		this.use = use;
+		this.use = NumberUtils.setUseProxy(this.use,use);
 	}
-
+	public void setUseRandom(boolean use){
+		this.use=NumberUtils.setUseRandom(this.use,use);
+	}
 	public int getUse()
 	{
 		return use;
 	}
-
+	public void setUse(int use){
+		this.use=use;
+	}
+	public boolean isUseProxy(){
+		return NumberUtils.isProxy(use);
+	}
+	public boolean isUseRandom(){
+		return NumberUtils.isRandom(use);
+	}
 	public void setId(int id)
 	{
 		this.id = id;
@@ -69,14 +80,14 @@ public class Task implements Parcelable
 		return id;
 	}
 
-	public void setTimer(boolean timer)
+	public void setTimer(int timer)
 	{
-		this.timer = timer?1:0;
+		this.timer = timer;
 	}
 
-	public boolean isTimer()
+	public int getTimer()
 	{
-		return timer==1;
+		return timer;
 	}
 	public void setName(String name){
 		this.name=name;

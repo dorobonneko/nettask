@@ -1,22 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v7.widget.CardView
 	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
 	android:layout_width="match_parent"
-	android:layout_height="wrap_content">
+	android:layout_height="wrap_content"
+	app:contentPaddingLeft="0dp"
+	app:contentPaddingRight="0dp"
+	app:contentPaddingTop="0dp"
+	app:contentPaddingBottom="0dp"
+	app:cardCornerRadius="5dp"
+	app:cardBackgroundColor="#00000000"
+	app:cardElevation="0px"
+>
 
 	<LinearLayout
+		android:paddingStart="16dp"
+		android:paddingEnd="16dp"
 		android:layout_width="fill_parent"
 		android:layout_height="wrap_content"
 		android:orientation="vertical"
-		android:background="@drawable/background">
+		>
 
 		<TextView
+			android:visibility="gone"
+			android:textSize="20sp"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:textAppearance="?android:attr/textAppearanceMedium"
-			android:text="添加任务"
-			android:layout_marginStart="30dp"
-			android:layout_marginTop="15dp"
+			android:text="@string/添加任务"
+			android:layout_marginTop="8dp"
 			android:textColor="?android:attr/textColorPrimary"/>
 
 		<ScrollView
@@ -28,21 +40,37 @@
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:orientation="vertical">
-
 				<TextView
+					android:textSize="@dimen/textSummary"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:textColor="?android:attr/textColorSecondary"
-					android:text="Url:"/>
+					android:text="@string/名称"/>
 
 				<EditText
+					android:textSize="@dimen/textTitle"
+					android:id="@+id/newtask_name"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:hint="@null"
+					android:singleLine="true"/>
+				
+				<TextView
+					android:textSize="@dimen/textSummary"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:textColor="?android:attr/textColorSecondary"
+					android:text="@string/url"/>
+
+				<EditText
+					android:textSize="@dimen/textTitle"
 					android:id="@+id/newtask_url"
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
-					android:hint="链接"
+					android:hint="@string/链接"
 					android:singleLine="true"/>
 
-				<com.moe.network.tasker.widget.AutoLayout
+				<com.moe.widget.AutoLayout
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content">
 
@@ -50,7 +78,7 @@
 						android:id="@+id/newtask_useProxy"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:text="使用代理"
+						android:text="@string/使用代理"
 						android:textColor="@drawable/textcolor"
 						/>
 
@@ -58,23 +86,24 @@
 						android:id="@+id/newtask_useRandom"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:text="使用随机值"
+						android:text="@string/使用随机值"
 						android:textColor="@drawable/textcolor"
 						/>
 
-				</com.moe.network.tasker.widget.AutoLayout>
+				</com.moe.widget.AutoLayout>
 
 				<RelativeLayout
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content">
 
 					<TextView
+						android:textSize="@dimen/textSummary"
 						android:layout_alignParentStart="true"
 						android:layout_centerVertical="true"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:textColor="?android:attr/textColorSecondary"
-						android:text="Method:"/>
+						android:text="@string/method"/>
 
 					<Spinner
 						android:id="@+id/newtask_method"
@@ -91,12 +120,13 @@
 					android:layout_height="wrap_content">
 
 					<TextView
+						android:textSize="@dimen/textSummary"
 						android:layout_alignParentStart="true"
 						android:layout_centerVertical="true"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:textColor="?android:attr/textColorSecondary"
-						android:text="UserAgent:"/>
+						android:text="@string/useragent"/>
 
 					<Spinner
 						android:id="@+id/newtask_userAgent"
@@ -109,6 +139,7 @@
 				</RelativeLayout>
 
 				<EditText
+					android:textSize="@dimen/textTitle"
 					android:singleLine="true"
 					android:id="@+id/newtask_customUserAgent"
 					android:layout_width="match_parent"
@@ -120,6 +151,7 @@
 		</ScrollView>
 
 		<RelativeLayout
+			android:visibility="gone"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content">
 
@@ -127,7 +159,7 @@
 				android:id="@+id/add"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
-				android:text="添加"
+				android:text="@string/添加"
 				android:background="?attr/selectableItemBackground"
 				android:layout_alignParentEnd="true"/>
 
@@ -135,7 +167,7 @@
 				android:id="@+id/cancel"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
-				android:text="取消"
+				android:text="@string/取消"
 				android:background="?attr/selectableItemBackground"
 				android:layout_toStartOf="@id/add"/>
 

@@ -22,6 +22,7 @@ public class ProgressButton extends CompoundButton implements ValueAnimator.Anim
 	private OnCheckedChangeListener occl;
 	private Paint paint;
 	private ValueAnimator anime,circleAnime;
+	private float width=0.4f;
 	public ProgressButton(Context context,AttributeSet attrs){
 		super(context,attrs);
 		anime=ObjectAnimator.ofFloat(new float[]{0,1});
@@ -52,16 +53,16 @@ public class ProgressButton extends CompoundButton implements ValueAnimator.Anim
 		}
 		if(circleAnime.isRunning()){
 			paint.setAlpha(128);
-			canvas.drawArc(1,1,(float)getMeasuredWidth()-1,(float)getMeasuredHeight()-1,-90f,360f*circleAnime.getAnimatedFraction(),true,paint);
+			canvas.drawArc(getMeasuredWidth()*((1-width)/2-0.2f),getMeasuredHeight()*((1-width)/2-0.2f),getMeasuredWidth()*(1-((1-width)/2-0.2f)),getMeasuredHeight()*(1-((1-width)/2-0.2f)),-90f,360f*circleAnime.getAnimatedFraction(),true,paint);
 			paint.setAlpha(255);
 		}
 	}
 	private Path getImage(float value){
 		Path p=new Path();
-		p.setLastPoint(getMeasuredWidth()*0.25f,getMeasuredHeight()*0.25f);
-		p.rLineTo(getMeasuredWidth()/2,(1-value)*getMeasuredHeight()*0.25f);
-		p.rLineTo(0,value*getMeasuredHeight()/2);
-		p.lineTo(getMeasuredWidth()*0.25f,getMeasuredHeight()*0.75f);
+		p.setLastPoint(getMeasuredWidth()*(1-width)/2,getMeasuredHeight()*(1-width)/2);
+		p.rLineTo(getMeasuredWidth()*width,(1-value)*getMeasuredHeight()*width/2);
+		p.rLineTo(0,value*getMeasuredHeight()*width);
+		p.lineTo(getMeasuredWidth()*(1-width)/2,getMeasuredHeight()*(1-(1-width)/2));
 		p.close();
 		return p;
 	}

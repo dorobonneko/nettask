@@ -2,5 +2,8 @@
 	<resources>
 		<dimen name="dialogSpace">25dp</dimen>
 		<dimen name="padding">5dp</dimen>
-		<dimen name="cellSpacing">32dp</dimen>
+		<dimen name="cellSpacing">16dp</dimen>
+		<dimen name="textTip">12sp</dimen>
+		<dimen name="textSummary">14sp</dimen>
+		<dimen name="textTitle">16sp</dimen>
 	</resources>
