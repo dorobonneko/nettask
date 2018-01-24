@@ -27,6 +27,7 @@ public class LoadMoreLayout extends ViewGroup implements NestedScrollingParent,N
 	private int position,overSize;
 	private boolean scroll=false;
 	private View child;
+	private String message;
 	public LoadMoreLayout(Context context,AttributeSet attrs){
 		super(context,attrs);
 		childHelper=new NestedScrollingChildHelper(this);
@@ -54,7 +55,12 @@ public class LoadMoreLayout extends ViewGroup implements NestedScrollingParent,N
 		if(child!=null)
 		child.layout(0,position,child.getMeasuredWidth(),child.getMeasuredHeight()+position);
 	}
-
+	public void setMessage(String msg){
+		this.message=msg;
+	}
+	public String getMessage(){
+		return message;
+	}
 	@Override
 	protected void onFinishInflate()
 	{
